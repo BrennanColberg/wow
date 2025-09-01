@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # this is the command to install
-wow="curl -fsSL https://raw.githubusercontent.com/BrennanColberg/wow/refs/heads/main/wow.py | python3"
+wow="curl -fsSL https://raw.githubusercontent.com/BrennanColberg/wow/refs/heads/main/wow.sh | bash"
 
 # check to ensure crontab doesn't already have it
 EXISTING_CRONTAB=$(crontab -l 2> /dev/null | cat)
-if echo "$EXISTING_CRONTAB" | grep -q "/wow."; then
+if echo "$EXISTING_CRONTAB" | grep -q "/wow.sh"; then
   echo "Crontab already has the WOW command."
   exit 0
 fi
